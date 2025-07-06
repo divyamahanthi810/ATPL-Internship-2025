@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+            color: #334155;
+            line-height: 24px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin-bottom: 24px;
+            padding: 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #cbd5e1;
+            margin-bottom: 24px;
+            background-color: #6366f1;
+            color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: white;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #e0e7ff;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 16px;
+        }
+
+        section p {
+            color: #475569;
+            margin-bottom: 8px;
+        }
+
+        .projects-container {
+        }
+        .projects-container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .project-card {
+            width: calc(50% - 16px);
+            float: left;
+            margin-right: 32px;
+            margin-bottom: 24px;
+            background-color: #f1f5f9;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+        }
+
+        .project-card:nth-child(2n) {
+            margin-right: 0;
+        }
+
+        .project-card h3 {
+            font-size: 19.2px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+            color: #475569;
+        }
+
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group button {
+            background-color: #4f46e5;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #4338ca;
+        }
+
+        footer {
+            text-align: center;
+            padding: 16px 0;
+            border-top: 1px solid #cbd5e1;
+            margin-top: 4px;
+            background-color: #334155;
+            color: #e2e8f0;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mahanthi Divya</h1>
+            <p>Frontend Developer</p>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Mahanthi Divya, a passionate and hardworking individual looking for a challenging position to contribute to innovative projects and enhance my expertise in an Organization where I can launch my career and work towards building a strong skill set.  I specialize in building responsive and accessible websites using modern web technologies like HTML, CSS, JavaScript. My technical skills also include C, Python, Java, OS, SQL, and DBMS.I possess strong leadership skills, time management, and teamwork abilities. 
+            </p>
+        </section>
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>A Deep Dive into Airline Status analysis using Data Analytics</h3>
+                    <img src="https://thepointsguy.global.ssl.fastly.net/us/originals/2024/03/GettyImages-155439315.jpg?width=1920" alt="Airline Analysis Project Image">
+                    <p>Developed a project to analyze an airline dataset to provide accurate and timely information to travelers regarding flight arrivals, departures, and on-time performance. 
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Alzheimer's Disease Diagnosis Using Deep Learning</h3>
+                    <img src="https://www.biotechniques.com/wp-content/uploads/2022/06/AD.png" alt="Alzheimer's Disease Diagnosis Project Image">
+                    <p>
+                        Developed a deep learning-based model to assist in the early detection of Alzheimer's disease using medical imaging and patient data. Implemented convolutional neural networks (CNNs) for image analysis and feature extraction, improving classification accuracy. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:divyamahanthi810@gmail.com">divyamahanthi810@gmail.com</a></p>
+                <p>Phone: <a href="tel:+919542780324">9542780324</a> </p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/divya-mahanthi-5a6993267" target="_blank">linkedin.com/in/divya-mahanthi-5a6993267</a></p>
+            </div>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Divya Mahanthi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
