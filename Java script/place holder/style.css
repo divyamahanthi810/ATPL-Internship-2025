@@ -1,0 +1,25 @@
+body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background-color: #fff;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 200px;
+    }
+    .card h3 {
+      margin: 0;
+      color: #333;
+    }
+    .card p {
+      margin: 5px 0 0;
+      color: #666;
+    }
