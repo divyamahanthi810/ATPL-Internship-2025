@@ -138,14 +138,11 @@
       clearInterval(intervalId);
     }
 
-    // Start auto sliding
     startSlider();
 
-    // Pause on hover
     slider.addEventListener("mouseenter", stopSlider);
     slider.addEventListener("mouseleave", startSlider);
 
-    // Dot click navigation
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
         index = i;
@@ -155,7 +152,6 @@
       });
     });
 
-    // Prev/Next button click
     nextBtn.addEventListener("click", () => {
       nextSlide();
       stopSlider();
