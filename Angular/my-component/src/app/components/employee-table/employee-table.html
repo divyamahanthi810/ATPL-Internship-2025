@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>EmployeeId</th>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if(!employeeDetails.length){
+    <div>Employees Not found !</div>
+    } @else { @for(employee of employeeDetails;track employee.employeeId){
+    <tr>
+      <td>{{ employee.employeeId }}</td>
+      <td>{{ employee.employeeName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.department }}</td>
+    </tr>
+    } }
+  </tbody>
+</table>
