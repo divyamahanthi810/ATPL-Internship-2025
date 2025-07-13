@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>User Greeting</h2>
+  
+  <label>Name:</label><br>
+  <input type="text" [(ngModel)]="name"><br>
+  <div class="error" *ngIf="nameError">{{ nameError }}</div>
+
+  <label>Age:</label><br>
+  <input type="number" [(ngModel)]="age"><br>
+  <div class="error" *ngIf="ageError">{{ ageError }}</div>
+
+  <button (click)="handleSubmit()">Submit</button>
+</div>
