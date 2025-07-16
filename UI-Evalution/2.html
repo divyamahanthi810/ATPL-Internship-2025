@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            text-align:center;
+            border:1px solid blue;
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="Name">Name</label>
+        <input type="text" id="name"><br><br>
+        <label for="Age">Age</label>
+        <input type="number" id="age"><br><br>
+        <button  onClick="profile()">Generate Profile</button>
+    </form>
+        <p id="demo"></p>
+    
+    <script>
+        function profile(){
+            let Name=document.getElementById("name").value;
+            let Age=parseInt(document.getElementById("age").value);
+            document.getElementById("demo").innerHTML=`Name: ${Name} Age:${Age}`;  
+        }
+    </script>
+</body>
+</html>

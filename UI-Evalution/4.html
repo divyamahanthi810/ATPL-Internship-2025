@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <label for="name">Name</label>
+    <input type="text" id="name"><br><br>
+    <div id="nameerror"></div>
+    <label for="email">Email</label>
+    <input type="email" id="email"><br><br>
+    <div id="emailerror"></div>
+    <label for="Password">Password</label>
+    <input type="password" id="password"><br><br>
+    <div id="passworderror"></div>
+    <button type="submit">Submit</button><br><br>
+    <div id="submiterror"></div>
+    </form>
+</body>
+<script>
+    var namefield=document.getElementById("name");
+    var Emailfield=document.getElementById("email");
+    var passwordField=document.getElementById("password");
+
+    var errorname=document.getElementById("nameerror");
+    var erroremail=document.getElementById("emailerror");
+    var errorpassword=document.getElementById("passworderror");
+    var errorsubmit=document.getElementById("submiterror");
+
+    function showError(error,message){
+        error.textContent=message;
+        error.message.add(hidden);
+
+    }
+
+    function clearError(error){
+        error.textContent="";
+        error.textContent.remove(hidden);
+
+    }
+
+    function isname(){
+        let namefield=namefield.value.trim;
+        if(namefield==""){
+            showError(nameerror,"Name is required");
+        }
+        else {
+            clearerror(nameerror);
+        }
+    }
+    function isEmail(){
+        if(Emailfield=="")
+    {
+        showError(emailerror,"Email is required");
+    }
+    else {
+        clearerror(emailerror);
+    }
+    }
+    
+</script>
+</html>
