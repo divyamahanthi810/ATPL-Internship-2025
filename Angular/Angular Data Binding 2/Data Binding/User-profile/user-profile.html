@@ -1,0 +1,38 @@
+ <h1>1.Interpolation & Property Binding</h1>
+    <h2>Welcome,{{userName}}!</h2>
+    <p>Age:{{userAge}}</p>
+    <img [src]="userImage" alt="UserImage">
+    <br>
+
+    <h1>2.Event Binding</h1>
+    <button (click)="onClick()">Click Me</button>
+    <p>{{clickMessage}}</p>
+    <br>
+
+    <h1>3.Two-Way Binding</h1>
+    <input [(ngModel)]="message" type="text" placeholder="Enter a message...">
+    <p>You typed: {{message}}</p>
+    <br>
+
+    <h1>4.Structural Directives</h1>
+    <h2>4.1 *ngIf</h2>
+    <button (click)="showDetails = !showDetails">{{ showDetails ? 'Hide' : 'Show' }} Details
+    </button>
+    <div *ngIf="showDetails">
+    <p>Name: {{ userName }}</p>
+    <p>Age: {{ userAge }}</p>
+    <img [src]="userImage" width="100" />
+    </div>
+    <h2>4.2 *ngFor</h2>
+    <ul>
+    <li *ngFor="let skill of skills">{{ skill }}</li>
+    </ul>
+    <br>
+    
+    <h1>5.Attribute Directives</h1>
+    <h2>5.1 [ngStyle]</h2>
+    <p [ngStyle]="{ color: userAge > 30 ? 'red' : 'green' }">Age Highlight</p>
+    <h2>5.2 [ngClass]</h2>
+    <p [ngClass]="{ 'premium': isPremiumUser, 'basic': !isPremiumUser }">
+    Account Type
+    </p>
