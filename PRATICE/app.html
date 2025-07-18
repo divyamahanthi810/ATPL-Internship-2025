@@ -1,0 +1,25 @@
+<h1>1.Show/Hide Toggle</h1>
+<button (click)="toggleTips()">
+  {{ showTips ? 'Hide Tips' : 'Show Tips' }}
+</button>
+<div *appToggle="showTips" class="tips">
+  <h3>Drink more water</h3>
+</div>
+<br><br>
+
+<h1>2.HighLight</h1>
+<ul>
+  <p>Items</p>
+  <li appAppHoverHighlight="lightyellow">Apple</li>
+  <li appAppHoverHighlight="lightyellow">Banana</li>
+  <li appAppHoverHighlight="lightyellow">Grape</li>
+</ul>
+<br><br>
+
+<h1>3.Disable</h1>
+<button [ngClass]="{'text-success': isVisible,'text-danger': !isVisible}">
+	    
+</button>
+
+  
+

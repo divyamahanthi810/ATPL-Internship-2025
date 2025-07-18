@@ -1,0 +1,10 @@
+.blue {
+  background-color: lightblue;
+}
+.text-success{
+  background-color:grey;
+  display:none;
+}
+.text-danger{
+  background-color:aqua;
+}
