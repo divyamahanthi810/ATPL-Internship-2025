@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div *ngFor="let faq of faqs">
+  <!-- Question -->
+  <div
+    (click)="toggleAnswer(faq)"
+    style="cursor: pointer; font-weight: bold; margin: 8px 0;"
+    *appHasRole="faq.roles"
+  >
+    {{ faq.question }}
+  </div>
+
+  <!-- Admin sees answers by default -->
+  <div *ngIf="userRole === 'admin' && faq.roles.includes('admin')" style="margin-left: 20px;">
+    {{ faq.answer }}
+  </div>
+
+  <!-- User sees answers only when clicked -->
+  <div *ngIf="userRole !== 'admin' && faq.showAnswer && faq.roles.includes(userRole)" style="margin-left: 20px;">
+    {{ faq.answer }}
+  </div>
+</div>
+  
+</body>
+</html>
