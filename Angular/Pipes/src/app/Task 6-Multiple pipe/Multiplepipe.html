@@ -1,0 +1,10 @@
+<div class="h3">
+<div style="text-align: center;">
+<h1 style="color:rgb(159, 32, 53)" >Headlines</h1>
+</div>
+<ul>
+  <li *ngFor="let headline of headlines">
+    {{ headline | slice:0:50 | uppercase }}...
+  </li>
+</ul>
+</div>
