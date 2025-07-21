@@ -1,0 +1,25 @@
+<div class="faq-container">
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="role-switcher">
+    <span>Current Role: <strong>{{ (currentRole$ | async) | uppercase }}</strong></span>
+    <button (click)="setRole('admin')">Switch to Admin</button>
+    <button (click)="setRole('user1')">Switch to User 1</button>
+    <button (click)="setRole('user2')">Switch to User 2</button>
+  </div>
+
+  <ng-container *ngFor="let faq of faqs">
+    <div class="faq-item" *appAppHasRole="faq.roles">
+      <div
+        class="faq-question"
+        appHighlightOnHover
+        appToggleAnswer="faq-answer"
+      >
+        {{ faq.question }}
+      </div>
+      <div class="faq-answer">
+        {{ faq.answer }}
+      </div>
+    </div>
+  </ng-container>
+</div>
