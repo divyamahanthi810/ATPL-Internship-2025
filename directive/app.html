@@ -1,0 +1,21 @@
+<div class="faq-container">
+  <h1>{{ title }}</h1>
+
+  <div class="role-selector">
+    <label for="role-select">Select Role: </label>
+    <select id="role-select" [(ngModel)]="currentUserRole">
+      <option value="admin">Admin</option>
+      <option value="user1">User 1</option>
+      <option value="user2">User 2</option>
+      <option value="guest">Guest (No specific role)</option>
+    </select>
+    <p>Current Role: <strong>{{ currentUserRole }}</strong></p>
+  </div>
+
+  <div *ngFor="let item of faqItems">
+    <div *appHasRole="item.roles" class="faq-item">
+      <h3 appHighlightOnHover appToggleAnswer [appToggleAnswerRole]="currentUserRole">{{ item.question }}</h3>
+      <p class="answer" style="display: none;">{{ item.answer }}</p>
+    </div>
+  </div>
+</div>
