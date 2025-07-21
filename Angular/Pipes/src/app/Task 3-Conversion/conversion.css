@@ -1,0 +1,11 @@
+.c3{
+    border:2px solid rgb(217, 217, 223);
+    border-radius:16px;
+    background-color:rgb(10, 26, 26);
+    width:max-content;
+    height:max-content;
+    margin:auto;
+    padding:20px;
+    color:bisque;
+    font-family:'Times New Roman', Times, serif;
+}
