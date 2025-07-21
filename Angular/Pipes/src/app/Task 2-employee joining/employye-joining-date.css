@@ -1,0 +1,10 @@
+.c2{
+    border:2px solid rgb(217, 217, 223);
+    border-radius:16px;
+    background-color:rgb(227, 235, 235);
+    width:max-content;
+    height:max-content;
+    margin:auto;
+    padding:20px;
+    font-family:'Times New Roman', Times, serif;
+}
