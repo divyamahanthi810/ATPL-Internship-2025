@@ -1,0 +1,9 @@
+<div class="c5">
+<h2 style="color:red">Top 5 Prices</h2>
+<ul>
+  <li *ngFor="let price of prices | slice:0:5">
+    {{ price | currency:'USD':'symbol':'1.0-2' }}
+  </li>
+</ul>
+</div>
+
