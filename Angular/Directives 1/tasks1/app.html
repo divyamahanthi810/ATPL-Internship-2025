@@ -1,0 +1,45 @@
+<h1>Task 3</h1>
+<button (click)="toggleDisable()">
+  {{ isDisabled ? 'Enable Input' : 'Disable Input' }}
+</button>
+
+<br><br>
+<input
+  type="text" [disabled]="isDisabled" [ngClass]="{ 'grey-background': isDisabled }">
+<h1>Task 4</h1>
+<!-- Button to toggle between roles -->
+<button (click)="toggleRole()">
+  Switch to {{ userRole === 'admin' ? 'User' : 'Admin' }}
+</button>
+
+<p>Current Role: {{ userRole }}</p>
+
+<!-- Show content only if userRole matches -->
+<div *ngIf="userRole === 'admin'">
+  <h3>Admin Dashboard</h3>
+  <p>Only admin can see this section.</p>
+</div>
+
+<div *ngIf="userRole === 'user'">
+  <h3>User Dashboard</h3>
+  <p>Only user can see this section.</p>
+</div>
+
+<h1>Task 5</h1>
+<div
+  #resizableDiv
+  [ngStyle]="{ 'background-color': boxColor, 'height': '50px', 'width': '60%' }"
+  class="resizable-box">
+  Width: {{ elementWidth }}px | Height: {{ elementHeight }}px
+</div>
+
+<h1>tASK 6</h1>
+<button
+  (click)="startCountdown()"
+  [disabled]="isDisabld"
+  [ngStyle]="{ 'background-color': isDisabled ? 'lightgray' : '#007bff', 'cursor': isDisabled ? 'not-allowed' : 'pointer' }"
+  [ngClass]="{ 'active-btn': !isDisabled }">
+  {{ buttonText }}
+</button>
+
+
