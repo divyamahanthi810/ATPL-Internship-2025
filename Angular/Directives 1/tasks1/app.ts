@@ -1,19 +1,31 @@
-import { Component,ViewChild,HostListener ,ElementRef,signal } from '@angular/core';
+import { Component,ElementRef,HostListener,viewChild, signal, ViewChild } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { AppHoverHighlight } from './app-hover-highlight';
+import { AppToggleDirective } from './app-toggle';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
+  imports: [RouterOutlet,AppHoverHighlight,AppToggleDirective,CommonModule],
   templateUrl: './app.html',
-  standalone: false,
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angularproject');
+  protected readonly title = signal('Directive');
+  showTips = false;
+  show=false;
+  toggleTips() {
+    this.showTips = !this.showTips;
+  }
+  isVisible= false; 
+  
   //TASK 3
-  isDisabled = false;
+  Disabled = false;
   name = '';
   toggleDisable() {
-    this.isDisabled = !this.isDisabled;
+    this.Disabled = !this.Disabled;
   }
+  
   //TASK 4
   userRole: 'admin' | 'user' = 'admin'; 
   toggleRole() {
@@ -21,8 +33,8 @@ export class App {
 }
 
   //TASK 5
-  elementWidth = 30;
-  elementHeight = 40;
+  elementWidth = 10;
+  elementHeight = 10;
   boxColor = 'lightblue';
   @ViewChild('resizableDiv') resizableDiv!: ElementRef;
   ngAfterViewInit() {
@@ -38,7 +50,7 @@ export class App {
     this.elementWidth = width;
     this.elementHeight = height;
     console.log(`Element size: ${width}px x ${height}px`);
-    this.boxColor = width < 400 ? 'lightcoral' : 'lightgreen';
+    this.boxColor = width < 400 ? 'orange' : 'lightgreen';
   }
 
   //TASK 6
@@ -46,11 +58,9 @@ export class App {
   isDisabld  = false;
   originalText = 'Resend OTP';
   buttonText = this.originalText;
-
   startCountdown() {
-    if (this.isDisabled) return;
-
-    this.isDisabled = true;
+    if (this.isDisabld) return;
+    this.isDisabld = true;
     this.countdown = 5;
     this.updateButtonText();
     const interval = setInterval(() => {
@@ -58,7 +68,7 @@ export class App {
       this.updateButtonText();
       if (this.countdown <= 0) {
         clearInterval(interval);
-        this.isDisabled = false;
+        this.isDisabld = false;
         this.buttonText = this.originalText;
       }
     }, 1000);
@@ -66,4 +76,5 @@ export class App {
   updateButtonText() {
     this.buttonText = `${this.originalText} (${this.countdown})`;
   }
+
 }
