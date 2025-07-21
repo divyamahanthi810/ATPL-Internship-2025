@@ -1,0 +1,10 @@
+.h3{
+    border:2px solid rgb(124, 219, 231);
+    border-radius:16px;
+    background-color:aqua;
+    width:max-content;
+    height:max-content;
+    margin:auto;
+    padding:20px;
+    font-family:'Times New Roman', Times, serif;
+}
