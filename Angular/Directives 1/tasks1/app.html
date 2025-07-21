@@ -2,27 +2,23 @@
 <button (click)="toggleDisable()">
   {{ isDisabled ? 'Enable Input' : 'Disable Input' }}
 </button>
-
 <br><br>
 <input
   type="text" [disabled]="isDisabled" [ngClass]="{ 'grey-background': isDisabled }">
+
 <h1>Task 4</h1>
 <!-- Button to toggle between roles -->
 <button (click)="toggleRole()">
   Switch to {{ userRole === 'admin' ? 'User' : 'Admin' }}
 </button>
-
 <p>Current Role: {{ userRole }}</p>
-
-<!-- Show content only if userRole matches -->
 <div *ngIf="userRole === 'admin'">
   <h3>Admin Dashboard</h3>
-  <p>Only admin can see this section.</p>
+  <p>Only admin can access.</p>
 </div>
-
 <div *ngIf="userRole === 'user'">
   <h3>User Dashboard</h3>
-  <p>Only user can see this section.</p>
+  <p>Only user can access.</p>
 </div>
 
 <h1>Task 5</h1>
@@ -33,7 +29,7 @@
   Width: {{ elementWidth }}px | Height: {{ elementHeight }}px
 </div>
 
-<h1>tASK 6</h1>
+<h1>TASK 6</h1>
 <button
   (click)="startCountdown()"
   [disabled]="isDisabld"
