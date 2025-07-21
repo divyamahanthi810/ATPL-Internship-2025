@@ -1,13 +1,36 @@
-<h1>Task 3</h1>
+//Task1
+<div class="Task1"><h1>1.Show/Hide Toggle</h1>
+<button style="background-color:orange" (click)="toggleTips()">
+  {{ showTips ? 'Hide Tips' : 'Show Tips' }}
+</button>
+<div *appToggle="showTips" class="tips">
+  <h3 style="color:blue">Drink more water</h3>
+</div>
+</div>
+<br><br>
+//Task2
+<div class="Task2">
+<h1>2.HighLight</h1>
+<ul>
+  <p>Items</p>
+  <li appAppHoverHighlight="lightyellow">Apple</li>
+  <li appAppHoverHighlight="lightyellow">Banana</li>
+  <li appAppHoverHighlight="lightyellow">Grape</li>
+</ul>
+<br><br>
+</div>
+//Task3
+<h1>3.Disable Input</h1>
 <button (click)="toggleDisable()">
-  {{ isDisabled ? 'Enable Input' : 'Disable Input' }}
+  {{ Disabled ? 'Enable Input' : 'Disable Input' }}
 </button>
 <br><br>
 <input
-  type="text" [disabled]="isDisabled" [ngClass]="{ 'grey-background': isDisabled }">
-
-<h1>Task 4</h1>
-<!-- Button to toggle between roles -->
+  type="text" [disabled]="Disabled" [ngClass]="{ 'grey-background': Disabled }">
+  <br><br>
+//Task4
+<div class="Task4">
+<h1>4.Switch User-admin</h1>
 <button (click)="toggleRole()">
   Switch to {{ userRole === 'admin' ? 'User' : 'Admin' }}
 </button>
@@ -20,22 +43,31 @@
   <h3>User Dashboard</h3>
   <p>Only user can access.</p>
 </div>
-
-<h1>Task 5</h1>
+</div>
+<br><br>
+//Task5
+<h1>5.Resize window</h1>
 <div
   #resizableDiv
-  [ngStyle]="{ 'background-color': boxColor, 'height': '50px', 'width': '60%' }"
+  [ngStyle]="{ 'background-color': boxColor, 'height': '50px', 'width': '200px' }"
   class="resizable-box">
   Width: {{ elementWidth }}px | Height: {{ elementHeight }}px
 </div>
-
-<h1>TASK 6</h1>
+<br>
+<br>
+//Task6
+<div class="Task6">
+ <h2>6.OTP</h2>
 <button
   (click)="startCountdown()"
   [disabled]="isDisabld"
-  [ngStyle]="{ 'background-color': isDisabled ? 'lightgray' : '#007bff', 'cursor': isDisabled ? 'not-allowed' : 'pointer' }"
-  [ngClass]="{ 'active-btn': !isDisabled }">
+  [ngStyle]="{ 'background-color': isDisabld ? 'lightgray' : '#007bff', 'cursor': isDisabld ? 'not-allowed' : 'pointer' }"
+  [ngClass]="{ 'active-btn': !isDisabld }">
   {{ buttonText }}
-</button>
+</button> 
+</div>
 
+
+
+  
 
