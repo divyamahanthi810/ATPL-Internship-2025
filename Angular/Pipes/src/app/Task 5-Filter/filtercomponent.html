@@ -1,0 +1,8 @@
+<div class="c4">
+<h2 style="color:blue">Active Users</h2>
+<ul>
+  <li *ngFor="let user of activeUsers">
+    <b>{{ user.Employeename | titlecase }} - Last Login: {{ user.lastLogin | date:'short' }}</b>
+  </li>
+</ul>
+</div>

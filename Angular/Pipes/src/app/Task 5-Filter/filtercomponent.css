@@ -1,0 +1,11 @@
+.c4{
+    border:2px solid rgb(230, 187, 138);
+    border-radius:16px;
+    background-color:rgb(230, 198, 140);
+    width:max-content;
+    height:max-content;
+    margin:auto;
+    padding:20px;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
