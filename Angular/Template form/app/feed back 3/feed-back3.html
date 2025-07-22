@@ -1,0 +1,47 @@
+<div class="container">
+  <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" class="form-control"
+             [(ngModel)]="feedback.name" required>
+      <div *ngIf="feedbackForm.controls['name']?.touched && feedbackForm.controls['name']?.invalid"
+           class="text-danger">
+        Name is required.
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>Feedback Type:</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="type" [(ngModel)]="feedback.type" value="Good" required>
+          Good
+        </label>
+        <label>
+          <input type="radio" name="type" [(ngModel)]="feedback.type" value="Average" required>
+          Average
+        </label>
+        <label>
+          <input type="radio" name="type" [(ngModel)]="feedback.type" value="Poor" required>
+          Poor
+        </label>
+      </div>
+      <div *ngIf="feedbackForm.controls['type']?.touched && feedbackForm.controls['type']?.invalid"
+           class="text-danger">
+        Please select a feedback type.
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" class="form-control"
+                [(ngModel)]="feedback.comments"></textarea>
+    </div><br>
+
+    <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit</button>
+  </form>
+
+  <div *ngIf="submitted" class="thank-you">
+    <h3>Thank you, {{ feedback.name }}!</h3>
+    <p>Your feedback type: <strong>{{ feedback.type }}</strong></p>
+  </div>
+</div>
+
