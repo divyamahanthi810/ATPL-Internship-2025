@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 style="color:rgb(51, 39, 25)">Login Form</h1>
+    <form #loginform="ngForm" (ngSubmit)="onsubmit(loginform)">
+        <div class="form-group">
+            <label for="name"><b>User Name </b> </label>
+            <input type="text" id="name" class="f" name="name" [(ngModel)]="login.name" required>
+            <div *ngIf="loginform.controls['name']?.touched && loginform.controls['name']?.invalid" class="error">
+                       Name is Required
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label for="password"><b>Password  </b></label>
+            <input type="password" id="password" class="f" name="password" [(ngModel)]="login.password" required>
+            <div *ngIf="loginform.controls['password']?.touched && loginform.controls['password']?.invalid" class="error">
+                      Password is Required
+            </div>
+        </div><br>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
