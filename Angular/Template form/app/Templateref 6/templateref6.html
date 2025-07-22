@@ -1,0 +1,31 @@
+
+<form #userForm="ngForm" (ngSubmit)="tempbtn(userForm)">
+   
+      <div class="form-group">
+        <label for="name">Full Name:  </label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="Details.name" required>
+        <div *ngIf="userForm.controls['name']?.touched && userForm.controls['name']?.valid && userForm.controls['name']?.dirty" class="text-danger">
+          Valid, Touched, Dirty
+        </div>
+      </div><br>
+      
+      <div class="form-group">
+        <label for="Age">Age: </label>
+        <input type="Date" class="form-control" id="age" name="age" [(ngModel)]="Details.age" required age="[16-35]{2}">
+        <div *ngIf="userForm.controls['age']?.touched && userForm.controls['age']?.valid && userForm.controls['age']?.dirty" class="text-danger">
+          Valid, Touched, Dirty
+        </div>
+      </div><br>
+  
+  
+      <div class="form-group">
+        <label for="mobile">Mobile Number: </label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" [(ngModel)]="Details.mobile" required pattern="[0-9]{10}">
+        <div *ngIf="userForm.controls['mobile']?.touched && userForm.controls['mobile']?.valid && userForm.controls['name']?.dirty" class="text-danger">
+          Valid, Touched, Dirty
+        </div>
+        </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="Reset" class="btn">Reset</button>
+    </form>
