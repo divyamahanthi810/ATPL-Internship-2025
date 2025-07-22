@@ -1,0 +1,37 @@
+<div class="form">
+<form #reset="ngForm" (ngSubmit)="resetbtn(reset)">
+        <div class="form-group">
+        <label for="name">Full Name:  </label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name" required>
+        <div *ngIf="reset.controls['name']?.touched && reset.controls['name']?.invalid" class="text-danger">
+          Name is required.
+        </div>
+      </div><br>
+      
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required email>
+        <div *ngIf="reset.controls['email']?.touched && reset.controls['email']?.invalid" class="text-danger">
+          Please enter a valid email address.
+        </div>
+      </div><br>
+  
+      <div class="form-group">
+        <label for="address">Address: </label>
+        <input type="text" class="form-control" id="address" name="address" [(ngModel)]="user.address" required>
+        <div *ngIf="reset.controls['address']?.touched && reset.controls['address']?.invalid" class="text-danger">
+          Address is required.
+        </div>
+      </div><br>
+  
+      <div class="form-group">
+        <label for="mobile">Mobile Number: </label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" [(ngModel)]="user.mobile" required pattern="[0-9]{10}">
+        <div *ngIf="reset.controls['mobile']?.touched && reset.controls['mobile']?.invalid" class="text-danger">
+          Please enter a valid mobile number.
+        </div>
+      </div><br>
+      <button type="submit"class="sb">submit</button>
+      <button type="reset" class="rt">Reset</button>
+</form>
+</div>

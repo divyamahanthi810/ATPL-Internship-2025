@@ -1,0 +1,74 @@
+.form {
+    max-width: 420px;
+    margin: 30px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #77a4db 0%, #ebedee 100%);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #5bd8e0;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+    outline: none;
+}
+
+.text-danger {
+    font-size: 13px;
+    color: #e63946;
+    margin-top: 4px;
+}
+
+.sb, .rt {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.sb {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    color: white;
+    margin-right: 10px;
+}
+
+.sb:hover {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    transform: scale(1.05);
+}
+
+.rt {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    color: white;
+}
+
+.rt:hover {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    transform: scale(1.05);
+}
