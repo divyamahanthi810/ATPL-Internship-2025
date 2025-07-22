@@ -1,0 +1,90 @@
+<div class="container">
+  <h2 class="heading">Template Driven Form</h2>
+  <form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" class="form-control" id="name" name="name"
+             [(ngModel)]="userDetails.name" required>
+      <div *ngIf="userForm.controls['name']?.touched && userForm.controls['name']?.invalid"
+           class="text-danger">
+        Name is required.
+      </div>
+    </div><br>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email"
+             [(ngModel)]="userDetails.email" required email>
+      <div *ngIf="userForm.controls['email']?.touched && userForm.controls['email']?.invalid"
+           class="text-danger">
+        Please enter a valid email address.
+      </div>
+    </div><br>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select class="form-control" id="gender" name="gender"
+              [(ngModel)]="userDetails.gender" required>
+        <option value="" disabled>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <div *ngIf="userForm.controls['gender']?.touched && userForm.controls['gender']?.invalid"
+           class="text-danger">
+        Please select a gender.
+      </div>
+    </div><br>
+
+    <div class="form-group">
+      <label for="Course">Course:</label>
+      <select class="form-control" id="Course" name="Course"
+              [(ngModel)]="userDetails.Course" required>
+        <option value="" disabled>Select Course</option>
+        <option value="Angular">Angular</option>
+        <option value="React">React</option>
+        <option value="Vue">Vue</option>
+      </select>
+      <div *ngIf="userForm.controls['Course']?.touched && userForm.controls['Course']?.invalid"
+           class="text-danger">
+        Please select a Course.
+      </div>
+    </div><br>
+
+    <div class="form-group">
+      <label for="Comments">Comments:</label>
+      <textarea class="form-control" id="Comments" name="Comments"
+                [(ngModel)]="userDetails.Comments"></textarea>
+    </div><br>
+
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+    <button type="Reset" class="btn" (click)="resetForm()">Reset</button>
+  </form>
+
+  <div *ngIf="submitted" class="preview-container">
+    <h3 class="heading">Entered Details</h3>
+    <table  class="preview-table">
+      <tr>
+        <th>Full Name</th>
+        <td>{{ userDetails.name }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ userDetails.email }}</td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>{{ userDetails.gender }}</td>
+      </tr>
+      <tr>
+        <th>Course</th>
+        <td>{{ userDetails.Course }}</td>
+      </tr>
+      <tr>
+        <th>Comments</th>
+        <td>{{ userDetails.Comments }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
