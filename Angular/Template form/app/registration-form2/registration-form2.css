@@ -1,0 +1,37 @@
+.container{
+     background-color: rgb(228, 200, 85);
+     display:block;
+     border-radius: 16px;
+     justify-content:center;
+     padding:20px;
+     width:fit-content;
+     margin:auto;
+     margin-top:40px;
+     text-align:center;
+}
+.login{
+    text-align:center;
+}
+button{
+    background-color: rgb(235, 129, 208);
+    text-align:center;
+    margin:auto;
+}
+.form-group{
+    font-size: medium;
+    color:black;
+}
+.error{
+    color:red;
+}
+.f{
+     border-color: rgb(162, 176, 252);
+}
+label{
+    font-size: larger;
+    padding:70px;
+}
+input{
+    width:fit-content;
+    height:25px;
+}

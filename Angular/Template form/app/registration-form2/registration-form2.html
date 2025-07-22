@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="login" style="color:rgb(51, 39, 25)">Registration Form</h1>
+    <form #register="ngForm" (ngSubmit)="onsubmit(register)">
+        <div class="form-group">
+            <label for="name"><b>User Name </b> </label><br><br>
+            <input type="text" id="name" class="f" name="name" [(ngModel)]="validform.name" required>
+            <div *ngIf="register.controls['name']?.touched && register.controls['name']?.invalid" class="error">
+                       Name is Required
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label for="Email"><b>Email  </b></label><br><br>
+            <input type="email" id="Email" class="f" name="email" [(ngModel)]="validform.email"  required>
+            <div *ngIf="register.controls['email']?.touched && register.controls['email']?.invalid" class="error">
+                      Email is Required
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label for="password"><b>Password  </b></label><br><br>
+            <input type="password" id="password" class="f" name="password" [(ngModel)]="validform.password" #pword="ngModel" minlength="6" required>
+            <div *ngIf="pword.errors?.['minlength']; elseIfBlock" class="error">
+                      Password must be atleast 6 letters
+            </div>
+        </div><br>
+        <button type="submit" [disabled]="register.invalid">Submit</button>
+    </form>
+    </div>
