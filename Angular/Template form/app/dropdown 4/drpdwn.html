@@ -1,0 +1,24 @@
+
+<form #drp="ngForm" (ngSubmit)="onsubmit(drp)">
+      <div class="form-group">
+        <label for="name">Full Name:  </label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="drpdwn.name" required>
+        <div *ngIf="drp.controls['name']?.touched && drp.controls['name']?.invalid" class="text-danger">
+          Name is required.
+        </div>
+      </div><br>
+      <div class="form-group">
+        <label for="country">country: </label>
+        <select class="form-control" id="country" name="country" [(ngModel)]="drpdwn.country" required>
+          <option value="" disabled>Select Country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+        </select>
+        <div *ngIf="drp.controls['country']?.touched && drp.controls['country']?.invalid" class="text-danger">
+          Please select a country.
+        </div>
+      </div><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <h1></h1>
