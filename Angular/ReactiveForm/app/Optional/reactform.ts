@@ -12,30 +12,30 @@ import { FormGroup,FormControl,Validators,ValidatorFn,AbstractControl } from '@a
 })
 export class Reactform {
   userForm!: FormGroup;
-    countries = ['United States', 'India', 'United Kingdom', 'Australia'];
-
     ngOnInit() {
         this.userForm = new FormGroup({
-            name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+            name: new FormControl('', [Validators.required]),
+            lname:new FormControl('', [Validators.required]),
             email: new FormControl('', [Validators.required, Validators.email]),
-            age: new FormControl('', [Validators.required, Validators.min(18)]),
-            phoneNumber: new FormControl('', [Validators.required,
-            Validators.pattern(/^\d{10}$/)]), 
-            // Example pattern for a 10-digit phone number
-            address: new FormControl('', [Validators.required]),
-            country: new FormControl('', [Validators.required]),
-            dateOfBirth: new FormControl('', [Validators.required]),
-            password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-            confirmPassword: new FormControl('', [Validators.required])
-        }, { validators: this.passwordsMatch() });
+            address: new FormGroup({
+            street: new FormControl('',Validators.required),
+            city: new FormControl('',Validators.required),
+          zipCode: new FormControl('', [Validators.required,Validators.pattern(/^\d{6}$/)])
+    }),
+            phones: new FormArray([new FormControl('',[Validators.required,Validators.maxLength(10)])])
+        });
     }
 
-    passwordsMatch(): ValidatorFn {
-        return (group: AbstractControl): { [key: string]: any } | null => {
-            const password = group.get('password')?.value;
-            const confirmPassword = group.get('confirmPassword')?.value;
-            return password === confirmPassword ? null : { passwordsMismatch: true };
-        };
+    get phones() {
+        return this.userForm.get('phones') as FormArray;
+    }
+
+    addItem() {
+        this.phones.push(new FormControl('',Validators.required));
+    }
+
+    removeItem(index: number) {
+        this.phones.removeAt(index);
     }
 
     onSubmit() {
