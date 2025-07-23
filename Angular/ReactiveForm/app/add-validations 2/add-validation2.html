@@ -1,0 +1,32 @@
+<form [formGroup]="validate" (ngSubmit)="submit(validate)">
+    <h1 style="color:orange">VALIDATION 2</h1>
+    <div class="f1">
+    <label for="name">Name  </label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="validate.controls['name']?.touched && validate.controls['name']?.invalid" class="error">
+        Name must be entered
+    </div>
+    </div><br>
+    <div class="f1">
+    <label for="age">Age  </label>
+    <input type="number" id="age" formControlName="age">
+    <div *ngIf="validate.controls['age']?.touched && validate.controls['age']?.invalid" class="error">
+        Age must be entered
+    </div>
+    </div><br>
+    <div class="f1">
+    <label for="email">Email  </label>
+    <input type="email" id="name" formControlName="email">
+    <div *ngIf="validate.controls['email']?.touched && validate.controls['email']?.invalid" class="error">
+        Email must be entered && in correct pattern
+    </div>
+    </div><br>
+    <div class="f1">
+    <label for="city">City  </label>
+    <input type="text" id="city" formControlName="city">
+    <div *ngIf="validate.controls['city']?.touched && validate.controls['city']?.invalid" class="error">
+        City must be entered
+    </div>
+    </div><br><br>
+    <button type="submit" style="background-color: rgb(245, 198, 181);">Submit</button>
+</form>
