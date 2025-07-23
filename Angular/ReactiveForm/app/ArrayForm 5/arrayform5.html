@@ -1,0 +1,22 @@
+<!-- src/app/app.component.html -->
+<div>
+    <h3 class="p">FormArray in Angular</h3>
+    <form [formGroup]="form" (ngSubmit)="onsubmit(form)" class="a">
+        <div formArrayName="phones">
+            <div *ngFor="let phone of phones.controls; let i = index" class="row">
+                <div class="c">
+                    <input type="text" [formControlName]="i" class="form-control" style="border: 1px solid black;">
+                    <div *ngIf="form.controls['phones']?.invalid && form.controls['phones']?.touched">
+                        Enter phone number and enter max of 10 digits
+                    </div>
+                </div><br>
+                <div class="c">
+                    <button type="button" (click)="removeItem(i)" class="btn">
+                      Remove Phonenumber</button>
+                </div><br>
+            </div>
+        </div>
+        <button type="button" (click)="addItem()" class="btn">Add Phonenumber</button><br><br>
+        <button type="submit" class="btn1">Submit</button>
+    </form>
+</div>
