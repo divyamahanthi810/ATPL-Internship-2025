@@ -1,0 +1,14 @@
+form{
+    border:2px solid burlywood;
+    background-color: antiquewhite;
+    width:fit-content;
+    text-align:center;
+    padding:50px;
+    margin:auto;
+}
+.error{
+    color:orange;
+}
+h3{
+    color:orangered;
+}
