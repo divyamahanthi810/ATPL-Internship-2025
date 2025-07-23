@@ -34,5 +34,6 @@ export class Arrayform5 {
         console.log("Entered numbers",this.form.value);
       }
     }
+    }
 
 }
