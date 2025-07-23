@@ -1,0 +1,37 @@
+<form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
+  
+    <h2 >Nested Form 4</h2>
+    <label for="firstName">Name:</label><br>
+    <input id="firstName" type="text" formControlName="firstName">
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('firstName')?.touched" class="error">
+      First Name is required.
+    </div><br>
+
+    <label for="email">Email:</label><br>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="nestedform.get('email')?.invalid && nestedform.get('email')?.touched" class="error">
+      <span *ngIf="nestedform.get('email')?.errors?.['required']">Email is required.</span>
+      <span *ngIf="nestedform.get('email')?.errors?.['email']">Invalid email format.</span>
+    </div>
+  <div formGroupName="address">
+    <label for="street">Street:</label><br>
+    <input id="street" type="text" formControlName="street"><br>
+    <div *ngIf="nestedform.get('address.street')?.invalid && nestedform.get('address.street')?.touched" class="error">
+      Street is required.
+    </div><br>
+
+    <label for="city">City:</label><br>
+    <input id="city" type="text" formControlName="city"><br>
+    <div *ngIf="nestedform.get('address.city')?.invalid && nestedform.get('address.city')?.touched" class="error">
+      City is required.
+    </div><br>
+
+    <label for="zipCode">Zip Code:</label><br>
+    <input id="zipCode" type="number" formControlName="zipCode"><br>
+    <div *ngIf="nestedform.get('address.zipCode')?.invalid && nestedform.get('address.zipCode')?.touched" class="error">
+      Zip Code is required.
+    </div><br>
+  </div>
+
+  <button type="submit" >Submit</button>
+</form>
