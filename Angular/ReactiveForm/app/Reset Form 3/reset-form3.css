@@ -1,18 +1,20 @@
 form{
-    border:2px solid rgb(11, 19, 37);
-    width:250px;
+    border:2px solid burlywood;
+    width:fit-content;
     text-align:center;
     padding:50px;
     margin:auto;
-    background: linear-gradient(#b8aebd, #9198e5);
-    border-radius: 16px;
-    color:#090c36
-    
+    background:linear-gradient(rgb(227, 227, 90),rgb(200, 99, 59))
 }
 .error{
-    color:rgb(182, 52, 29);
+    color:rgb(155, 56, 14);
+}
+h1{
+    color:rgb(8, 67, 8);
+}
+input{
+    box-shadow: inset;
 }
 button{
-    background-color: rgb(185, 167, 221);
-    margin:6px
+    background-color: blanchedalmond;
 }
