@@ -1,0 +1,14 @@
+
+<form [formGroup]="basicform" (ngSubmit)="onsubmit(basicform)">
+    <h1>Basic Reactive Form</h1>
+    <label for="name" class="label">Name</label><br>
+    <input type="text" id="name" formControlName="name" class="input"><br>
+    <div *ngIf="basicform.controls['name']?.touched && basicform.controls['name']?.invalid" class="error">
+        Name is Required and length must be min 5
+    </div>
+    <label for="email" class="label">Email</label><br>
+    <input type="email" id="email" formControlName="email" class="input"><br>
+    <label for="password" class="label">Password</label><br>
+    <input type="text" id="name" formControlName="password" class="input"><br><br>
+    <button type="submit" class="btn">Submit</button>
+</form>

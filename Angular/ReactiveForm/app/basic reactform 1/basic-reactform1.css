@@ -1,0 +1,11 @@
+.error{
+    color:red;
+}
+form{
+    border:2px solid white;
+    background-color: aliceblue;
+    padding:20px;
+    width:fit-content;
+    text-align:center;
+    margin:auto;
+}
