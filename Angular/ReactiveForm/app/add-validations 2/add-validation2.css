@@ -4,7 +4,8 @@ form{
     text-align:center;
     padding:50px;
     margin:auto;
+    background:linear-gradient(rgb(230, 94, 94),pink)
 }
 .error{
-    color:orange;
+    color:rgb(21, 0, 255);
 }
