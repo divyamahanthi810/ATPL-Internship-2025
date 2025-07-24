@@ -1,0 +1,26 @@
+<li>
+    <mat-form-field>
+      <mat-label>What's your name?</mat-label>
+      <input matInput [(ngModel)]="name" />
+    </mat-form-field>
+  </li>
+  <li>
+    <button matButton="elevated" (click)="openDialog()">Pick one</button>
+  </li>
+  @if (animal()) {
+    <li>
+      You chose: <em>{{animal()}}</em>
+    </li>
+  }
+<!-- 
+<mat-form-field>
+  <mat-label>Message</mat-label>
+  <input matInput value="Disco party!" #message>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Action</mat-label>
+  <input matInput value="done" #action>
+</mat-form-field>
+
+<button matButton="outlined" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button> -->
