@@ -1,0 +1,13 @@
+
+mat-dialog-content {
+  font-size: 150px;
+  width:fit-content;
+}
+input{
+    width:180px;
+    height:40px;
+
+}
+mat-dialog-actions {
+  margin-top: 5px;
+}

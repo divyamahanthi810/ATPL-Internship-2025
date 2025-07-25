@@ -1,0 +1,12 @@
+
+<h1 mat-dialog-title>Enter Phone Number</h1>
+<mat-dialog-content>
+  <mat-form-field appearance="fill" style="width:100%;">
+    <mat-label>Enter Here</mat-label>
+    <input matInput [(ngModel)]="userInput" placeholder="Enter Here" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onConfirm()">Confirm</button>
+</mat-dialog-actions>
