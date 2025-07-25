@@ -1,7 +1,9 @@
-<mat-card id="card" appearance="outlined" style="text-align: center;" >
+
+<span class="tit">LOGIN FORM</span><br>
+<mat-card id="card" class="tit1" appearance="outlined" style="text-align: center;" >
     <mat-card-header>
-    <mat-card-title style="margin-right:5px;">Login Form</mat-card-title>
-<form [formGroup]="form" (ngSubmit)="onsubmit(form)"><br><br><br>
+<form [formGroup]="form" (ngSubmit)="onsubmit(form)">
+  
 <mat-form-field>
   <mat-label>Email</mat-label>
   <input matInput placeholder="Enter Email" formControlName="email">
