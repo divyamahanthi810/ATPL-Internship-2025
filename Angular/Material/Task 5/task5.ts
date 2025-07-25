@@ -28,11 +28,20 @@ import { MatDialogContent } from '@angular/material/dialog';
 export class Task5 {
  isDarkTheme = false;
 
-  displayedColumns: string[] = ['id', 'name', 'role'];
+  displayedColumns: string[] = ['id', 'name', 'Grade'];
   dataSource = [
-    {id: 1, name: 'John Doe', role: 'Developer'},
-    {id: 2, name: 'Jane Smith', role: 'Designer'},
-    {id: 3, name: 'Mike Johnson', role: 'Manager'}
+    {id: 1, name: 'Kiran', Grade: 'A'},
+    {id: 2, name: 'Priya', Grade: 'B'},
+    {id: 3, name: 'Gautam', Grade: 'A+'},
+    {id: 4, name: 'Kumar', Grade: 'C'},
+    {id: 5, name: 'Raju', Grade: 'B'},
+    {id: 6, name: 'Naveen', Grade: 'A'},
+    {id: 7, name: 'Dileep', Grade: 'A'},
+    {id: 8, name: 'Aravind', Grade: 'C'},
+    {id: 9, name: 'Krishnan', Grade: 'A+'},
+    {id: 10, name: 'Mohit', Grade: 'B'},
+    {id: 11, name: 'Navya', Grade: 'C'},
+    {id: 12, name: 'Sandhya', Grade: 'A'}
   ];
 
   constructor(private dialog: MatDialog) {}
@@ -44,6 +53,7 @@ export class Task5 {
   openDialog() {
     this.dialog.open(DialogContent);
   }
+  
 }
 
 @Component({
@@ -52,7 +62,7 @@ export class Task5 {
   template: `
     <h2 mat-dialog-title>Dialog</h2>
     <mat-dialog-content>
-      <p>This is a sample dialog!</p>
+      <p>Welcome Student</p>
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-button mat-dialog-close>Close</button>
