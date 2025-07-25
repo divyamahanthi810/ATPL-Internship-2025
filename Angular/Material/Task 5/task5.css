@@ -1,11 +1,18 @@
 .app-container {
   height: 100vh;
+  background: linear-gradient(rgba(155, 155, 243, 0.801),white)
+}
+.sidenav{
+  background-color:rgba(140, 140, 228, 0.801);
+  width:150px;
+
 }
 
 .app-toolbar {
   position: sticky;
   top: 0;
   z-index: 2;
+  background-color: rgb(150, 130, 240);
 }
 
 .spacer {
@@ -13,11 +20,12 @@
 }
 
 .main-content {
-  padding: 20px;
+  padding: 50px;
 }
 
 .welcome-card {
   margin-bottom: 20px;
+  color:rgb(101, 21, 175)
 }
 
 .dark-theme {
