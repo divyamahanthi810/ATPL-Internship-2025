@@ -1,0 +1,12 @@
+.tit{
+    color:rgb(32, 32, 83);
+    margin-left:46%;
+    margin-top:20px;
+    font-size: larger;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.tit1{
+    width:fit-content;
+    background-color: rgb(194, 202, 202);
+    margin:auto;
+}
