@@ -1,0 +1,31 @@
+.app-container {
+  height: 100vh;
+}
+
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.welcome-card {
+  margin-bottom: 20px;
+}
+
+.dark-theme {
+  background: #303030;
+  color: #fff;
+}
+
+.dark-theme mat-card {
+  background: #424242;
+  color: white;
+}

@@ -1,0 +1,60 @@
+<mat-sidenav-container class="app-container" [class.dark-theme]="isDarkTheme">
+  <!-- Side Menu -->
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item href="#">Dashboard</a>
+      <a mat-list-item href="#">Reports</a>
+      <a mat-list-item href="#">Settings</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Toolbar -->
+    <mat-toolbar color="primary" class="app-toolbar">
+      <span>My Dashboard</span>
+      <span class="spacer"></span>
+      <mat-slide-toggle (change)="toggleTheme()" [checked]="isDarkTheme">
+        Dark Mode
+      </mat-slide-toggle>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <!-- Welcome Card -->
+      <mat-card class="welcome-card">
+        <mat-card-title>Welcome to the Dashboard</mat-card-title>
+        <mat-card-content>
+          This is a sample Angular Material dashboard with light/dark theme support.
+        </mat-card-content>
+        <button mat-raised-button color="accent" (click)="openDialog()">Open Dialog</button>
+      </mat-card>
+
+      <!-- Data Table -->
+      <mat-card>
+        <mat-card-title>Employee Data</mat-card-title>
+        <mat-card-content>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="role">
+              <th mat-header-cell *matHeaderCellDef> Role </th>
+              <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
