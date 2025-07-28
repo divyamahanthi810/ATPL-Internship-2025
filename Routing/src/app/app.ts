@@ -1,0 +1,15 @@
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Home} from './home/home';
+import { About } from './about/about';
+import { RouterLink,RouterLinkActive } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet,RouterLink,RouterLinkActive],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected readonly title = signal('Routing');
+}
