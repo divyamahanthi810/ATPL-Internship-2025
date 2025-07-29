@@ -1,10 +1,22 @@
-<!-- <h1>Task 1-Navigation</h1>
+<h1>Task 1-Navigation</h1>
 <nav>
     <ul>
-        <li><a routerLink="/home/:123" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
         <li><a routerLink="/about" routerLinkActive="active">About</a></li>
         <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
-</nav> -->
-<app-product-list></app-product-list>
-<router-outlet></router-outlet>
+ </nav>
+ <h1>Task-4 CanActivate</h1>
+ <a routerLink="/admincompo" routerLinkActive="active">Admin role</a>
+ <h1>Task-4 CanDeactive</h1>
+ <a routerLink="/edit" routerLinkActive="active">Edit Profile</a>
+<h1>Task 5-load children</h1>
+ 
+ <div class="button"><a routerLink="/admin1/login1">Admin Module</a>
+ <a routerLink="/user1/login2">User</a>
+ <div *ngIf="loadIndicator">loading...</div>
+ </div>
+
+ <h1>Task 6-Handing Unknown route</h1>
+ <a routerLink="/admin">Missing page</a>
+ <router-outlet></router-outlet> 

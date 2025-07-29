@@ -11,13 +11,12 @@ import { Injectable } from '@angular/core';
       canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        // Implement your logic here to determine if the route can be activated
-        const isAuthenticated = true; // Replace with actual authentication check
+        const isAuthenticated = false; 
 
         if (isAuthenticated) {
           return true;
         } else {
-          this.router.navigate(['/login']); // Redirect to login page if not authenticated
+          this.router.navigate(['/login']);
           return false;
         }
       }
