@@ -9,5 +9,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class EditProfile {
   message:FormControl=new FormControl();
+  dirty=false;
 
 }
