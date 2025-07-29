@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterLink,RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-edit-profile',
-  imports: [ReactiveFormsModule],
+  imports: [RouterLink,RouterLinkActive,ReactiveFormsModule,FormsModule ,CommonModule],
   templateUrl: './edit-profile.html',
   styleUrl: './edit-profile.css'
 })
 export class EditProfile {
-  message:FormControl=new FormControl();
-  dirty=false;
-
+  username="";
+  dirty=false; 
+  onUserChange(event:Event){
+    this.dirty=true;
+}
 }
