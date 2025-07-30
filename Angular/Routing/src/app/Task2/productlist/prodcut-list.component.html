@@ -1,0 +1,7 @@
+<h2>Product List</h2>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }}
+    <button (click)="goToProduct(product.id)">View Details</button>
+  </li>
+</ul>
