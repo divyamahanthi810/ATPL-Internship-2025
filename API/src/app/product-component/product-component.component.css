@@ -1,0 +1,63 @@
+/* product.component.css */
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  margin-right: 10px;
+  margin-top: 1px;
+  padding: 5px 10px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  float:right;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff;
+  padding: 13px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+  text-align: center;
+  color: #28a745;
+  margin-bottom: 15px;
+}
