@@ -9,7 +9,7 @@ import { RouterLink,RouterLinkActive } from '@angular/router';
   styleUrl: './edit-profile.css'
 })
 export class EditProfile {
-  username="";
+  username=" ";
   dirty=false; 
   onUserChange(event:Event){
     this.dirty=true;
