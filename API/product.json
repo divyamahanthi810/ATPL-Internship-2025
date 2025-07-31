@@ -1,0 +1,34 @@
+{
+  "product": [
+    {
+      "id": 102,
+      "name": "Mouse",
+      "cost": 2000
+    },
+    {
+      "id": 104,
+      "name": "Keyboard",
+      "cost": 5000
+    },
+    {
+      "id": 106,
+      "name": "pendrive",
+      "cost": 500
+    },
+    {
+      "name": "charger",
+      "cost": 2500,
+      "id": 107
+    },
+    {
+      "name": "Mouse",
+      "cost": 500,
+      "id": 108
+    },
+    {
+      "name": "HardDisk",
+      "cost": 360,
+      "id": 109
+    }
+  ]
+}

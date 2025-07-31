@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Product Management</h2>
+  <p clas="message">{{ message }}</p>
+
+  <input [(ngModel)]="newProduct.name" placeholder="Name" /><br><br>
+  <input [(ngModel)]="newProduct.cost" type="number" placeholder="cost"/><br>
+  <button style="float:left" (click)="addProduct()">Add Product</button><br><br>
+
+  <ul>
+    <li *ngFor="let product of products">
+      {{ product.name }} - {{ product.cost }}
+      <button (click)="updateProduct(product)">Edit</button>
+      <button (click)="deleteProduct(product.id!)">Delete</button>
+    </li>
+  </ul>
+</div>
