@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox'; 
+  private apiUrl = 'https://angular-14-jwt-authentication-example.stackblitz.io/'; 
 
   constructor(private http: HttpClient) {}
 

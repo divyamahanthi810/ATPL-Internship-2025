@@ -1,0 +1,13 @@
+.container{
+    border:1px solid black;
+    text-align: center;
+    padding:10px;
+    margin:auto;
+    margin-top:170px;
+    width:150px;
+    background-color: antiquewhite;
+}
+input{
+    border-color: black;
+    box-shadow:10px;
+}
