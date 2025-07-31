@@ -7,9 +7,7 @@
     width:150px;
     background-color: antiquewhite;
 }
-h3{
-    color:brown;
-}
-p{
-    color:rgb(91, 89, 238);
+input{
+    border-color: black;
+    box-shadow:10px;
 }
