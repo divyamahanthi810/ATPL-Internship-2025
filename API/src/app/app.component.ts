@@ -7,7 +7,7 @@ import { UserComponent } from './Task2/user/user.component';
 
 @Component({
   selector: 'app-root',
-  imports: [UserComponent,FormsModule,CommonModule,RouterOutlet,ProductComponentComponent],
+  imports: [ProductComponentComponent,UserComponent,FormsModule,CommonModule,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

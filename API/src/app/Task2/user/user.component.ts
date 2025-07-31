@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.module';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ErrorComponent } from '../error/error.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
-  imports: [MatSnackBarModule],
+  imports: [ErrorComponent,CommonModule,FormsModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
@@ -15,7 +17,6 @@ export class UserComponent {
 
   constructor(
     private userService: UserService,
-    private snackBar: MatSnackBarModule
   ) {}
 
   ngOnInit(): void {
@@ -27,11 +28,10 @@ export class UserComponent {
       next: (data) => {
         this.user = data;
         this.errorMessage = '';
-        this.snackBar.open('User loaded successfully', 'Close', { duration: 2000 });
+        alert('User loaded successfully');
       },
       error: (err) => {
-        this.errorMessage = 'Failed to load user profile.';
-        this.snackBar.open(this.errorMessage, 'Close', { duration: 3000 });
+        alert('Failed to load user profile.');
       }
     });
   }

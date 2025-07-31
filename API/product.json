@@ -1,34 +1,39 @@
 {
   "product": [
     {
-      "id": 102,
+      "id": "102",
       "name": "Mouse",
       "cost": 2000
     },
     {
-      "id": 104,
+      "id": "104",
       "name": "Keyboard",
       "cost": 5000
     },
     {
-      "id": 106,
+      "id": "106",
       "name": "pendrive",
       "cost": 500
     },
     {
       "name": "charger",
       "cost": 2500,
-      "id": 107
-    },
-    {
-      "name": "Mouse",
-      "cost": 500,
-      "id": 108
+      "id": "107"
     },
     {
       "name": "HardDisk",
       "cost": 360,
-      "id": 109
+      "id": "109"
+    },
+    {
+      "id": "6cc4",
+      "name": "Laptop",
+      "cost": 67000
+    },
+    {
+      "id": "ed06",
+      "name": "Computer",
+      "cost": 25000
     }
   ]
 }

@@ -1,0 +1,15 @@
+.container{
+    border:1px solid black;
+    text-align: center;
+    padding:10px;
+    margin:auto;
+    margin-top:170px;
+    width:150px;
+    background-color: antiquewhite;
+}
+h3{
+    color:brown;
+}
+p{
+    color:rgb(91, 89, 238);
+}
