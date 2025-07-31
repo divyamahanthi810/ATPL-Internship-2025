@@ -1,0 +1,61 @@
+{
+  "product": [
+    {
+      "id": "102",
+      "name": "Mouse",
+      "cost": 2000
+    },
+    {
+      "id": "104",
+      "name": "Keyboard",
+      "cost": 5000
+    },
+    {
+      "id": "106",
+      "name": "pendrive",
+      "cost": 500
+    },
+    {
+      "name": "charger",
+      "cost": 2500,
+      "id": "107"
+    },
+    {
+      "name": "HardDisk",
+      "cost": 360,
+      "id": "109"
+    },
+    {
+      "id": "6cc4",
+      "name": "Laptop",
+      "cost": 67000
+    },
+    {
+      "id": "ed06",
+      "name": "Computer",
+      "cost": 25000
+    }
+  ],
+  "UserDetails": [
+    {
+      "id": 1,
+      "username": "Ravi",
+      "age": 23
+    },
+    {
+      "id": 2,
+      "username": "kiran",
+      "age": 26
+    },
+    {
+      "id": 3,
+      "username": "manoj",
+      "age": 21
+    },
+    {
+      "id": 4,
+      "username": "suresh",
+      "age": 13
+    }
+  ]
+}
