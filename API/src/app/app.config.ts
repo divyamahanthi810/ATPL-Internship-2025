@@ -8,6 +8,7 @@ import {  loadingSpinnerInterceptorFunctional, loggingInterceptorFunctional,  } 
 import { LoadingspinnerService } from './Task3/loadingspinner.service';
 import { AuthService } from './Task3/auth.service';
 import { AuthInterceptor} from './Task4/auth.interceptor';
+import { AuthoInterceptor } from './JWT/autho.interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [provideHttpClient(withInterceptors([
         loadingSpinnerInterceptorFunctional,  
@@ -19,7 +20,8 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
     provideClientHydration(withEventReplay()),
-    [provideHttpClient()]
+    [provideHttpClient()],
+    { provide: HTTP_INTERCEPTORS, useClass: AuthoInterceptor, multi: true }
   ],
   
 };

@@ -9,9 +9,11 @@ import { HttpClient } from '@angular/common/http';
 import { LoginComponent } from './Task4/login/login.component';
 import { Product1Component } from './Task5/product1/product1.component';
 import { User1Component } from './Task5/user1/user1.component';
+import { LoginpageComponent } from './JWT/loginpage/loginpage.component';
+import { Data3Component } from './JWT/data3/data3.component';
 @Component({
   selector: 'app-root',
-  imports: [InterpectorComponent,Product1Component,User1Component,ProductComponentComponent,UserComponent,FormsModule,CommonModule,RouterOutlet,LoginComponent],
+  imports: [Data3Component,LoginpageComponent,InterpectorComponent,Product1Component,User1Component,ProductComponentComponent,UserComponent,FormsModule,CommonModule,RouterOutlet,LoginComponent],
   template:`<app-product1></app-product1>
     <hr>
     <app-user1></app-user1>`,
