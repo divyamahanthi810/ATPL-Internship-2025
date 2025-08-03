@@ -1,86 +1,17 @@
-<h1>Login Form</h1>
-<div class="user">
-<form [formGroup]="userform" (ngSubmit)="Submit(userform)">
-    <label for="name"><strong>UserName</strong></label><br>
-    <input type="text" name="name" placeholder="Enter username" formControlName="name"><br>
-    <label for="age"><strong>Age</strong></label><br>
-    <input type="number" name="age" placeholder="Enter Age" formControlName="age"><br>
-    <button type="submit">Submit</button>
-    <button type="button">Logout</button>
-</form>
+<div class="container">
+  <h1>Task 5-6</h1>
+  <h2>Login Form</h2>
+
+  <div *ngIf="!loggedInUser; else welcomeBlock">
+    <input [(ngModel)]="username" placeholder="Username" /><br /><br />
+    <input [(ngModel)]="password" type="password" placeholder="Password" /><br /><br />
+    <button (click)="login()">Login</button>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </div>
+
+  <ng-template #welcomeBlock>
+    <h3>Welcome, {{ loggedInUser }}!</h3>
+    <button (click)="logout()">Logout</button>
+  </ng-template>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  padding: 25px;
-  background-color: white;
-  color: black;
-  font-size: 25px;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-</style>
-</head>
-<body>
-
-<h2>Toggle Dark/Light Mode</h2>
-<p>Click the button to toggle between dark and light mode for this page.</p>
-
-<button onclick="myFunction()">Toggle dark mode</button>
-
-<script>
-function myFunction() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-</script>
-
-</body>
-</html>
- -->
