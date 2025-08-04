@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Parent } from './Task1/parent/parent';
 import { Loginforms } from './Task5-6/loginforms/loginforms';
-import { Form } from '@angular/forms';
+import { Pratice } from './pratice/pratice';
 import { form } from './Task3-4/form/form';
 @Component({
   selector: 'app-root',
-  imports: [Parent,Loginforms,form],
+  imports: [Pratice,Parent,Loginforms,form],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
