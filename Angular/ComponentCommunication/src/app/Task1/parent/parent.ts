@@ -12,7 +12,7 @@ import { Child } from '../child/child';
 })
 export class Parent {
   Studentnames:string[]=['Divya','Ram','Ganesh','Suresh'];
-  messageFromChild = "";
+  messageFromChild = "Message from student";
   receiveFromChild(message: string) {
     this.messageFromChild = message;
   }
