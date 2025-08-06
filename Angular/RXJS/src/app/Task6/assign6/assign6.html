@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let product of products">
+    <button nz-button (click)="getProductDetails(product.id)">{{ product.name }}</button>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let detail of productDetails">{{ detail }}</li>
+</ul>

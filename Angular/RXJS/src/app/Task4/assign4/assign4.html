@@ -1,0 +1,7 @@
+<nz-switch
+  [ngModel]="theme === 'light'"
+  (ngModelChange)="toggleTheme($event)">
+</nz-switch>
+<div [ngClass]="theme">
+  <h3>Current Theme: {{ theme }}</h3>
+</div>
