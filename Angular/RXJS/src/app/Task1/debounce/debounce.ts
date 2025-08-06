@@ -28,9 +28,10 @@ export class Debounce {
   //     console.log('Searching for:', value);
   //   });
   // }
-  constructor(){
-const searchBox = document.getElementById('search-box');
-const search$ = fromEvent(searchBox, 'input')
+  
+const search = document.getElementById('search-box');
+constructor(){
+const search$ = fromEvent(search, 'input')
   .pipe(
     map((event:any) => event.target.value),
     debounceTime(300)
