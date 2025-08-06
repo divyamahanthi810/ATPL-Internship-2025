@@ -1,0 +1,12 @@
+.box{
+    border:1px solid black;
+    padding:20px;
+    width:250px;
+    text-align:center;
+    height:fit-content;
+    margin:auto;
+}
+li{
+    list-style-type: none;
+    padding: 10px;
+}

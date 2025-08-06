@@ -1,4 +1,13 @@
 button{
     width:150px;
-    background-color:rgb(136, 239, 112);
+    background-color:rgb(147, 202, 238);
+}
+.container{
+    width:240px;
+    text-align:center;
+    height:150px;
+    margin:auto;
+}
+li{
+    list-style-position: inside;
 }

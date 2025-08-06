@@ -1,0 +1,10 @@
+button{
+    background-color: rgb(247, 202, 247);
+}
+.contain{
+    text-align:center;
+    border:1px solid black;
+    width:350px;
+    height:100px;
+    margin:auto;
+}

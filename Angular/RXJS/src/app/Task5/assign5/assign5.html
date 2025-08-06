@@ -1,6 +1,11 @@
+<div class="contain">
+<h2>Task 5</h2>
 <button nz-button (click)="showModal()">Open Modal</button>
-
-<nz-modal [(nzVisible)]="isVisible" nzTitle="Demo Modal"
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Modal Box"
           (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-  <p>Some modal content</p>
+        <ng-container *nzModalContent>
+        <p>Hello user</p>
+        <p>Welcome</p>
+      </ng-container>
 </nz-modal>
+</div>

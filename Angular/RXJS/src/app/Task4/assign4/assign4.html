@@ -1,7 +1,8 @@
-<nz-switch
-  [ngModel]="theme === 'light'"
+<h1>Task4</h1>
+<nz-switch [ngModel]="theme === 'dark'"
   (ngModelChange)="toggleTheme($event)">
 </nz-switch>
+<button (click)="toggle()" nz-button nzType="primary">Toggle Button</button>
 <div [ngClass]="theme">
   <h3>Current Theme: {{ theme }}</h3>
 </div>

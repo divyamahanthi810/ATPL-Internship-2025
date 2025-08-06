@@ -28,8 +28,9 @@ users: any[] = [];
 
   fetchUsers() {
     const dummyData = [
-      { name: 'Alice', email: 'alice@example.com' },
-      { name: 'Bob', email: 'bob@example.com' }
+      { name: 'Divya',college:"Lendi",branch:"CSE", email: 'divya@gmail.com' },
+      { name: 'Geeta',college:"Raghu",branch:"ECE", email: 'geetasri@gmail.com' },
+      {name:'Harish',college:"Anits",branch:"CSIT",email:'Hkumar121@gmail.com'}
     ];
     return of(dummyData).pipe(delay(1000));
   }

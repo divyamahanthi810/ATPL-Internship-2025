@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './assign4.css'
 })
 export class Assign4 {
-  private themeSubject = new BehaviorSubject<string>('light');
+  private themeSubject = new BehaviorSubject<string>('dark');
   theme = 'dark';
 
   constructor() {
@@ -26,5 +26,8 @@ export class Assign4 {
 }
   toggleTheme(isDark: boolean) {
     this.themeSubject.next(isDark ? 'dark' : 'light');
+  }
+  toggle(){
+    alert("light")
   }
 }

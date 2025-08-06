@@ -1,15 +1,20 @@
-<button nz-button nzType="default" (click)="reloadUsers()">Reload</button>
+<h1>Task3</h1>
+<button style="background-color: aquamarine; text-align: center;" nzType="default" (click)="reloadUsers()">Reload</button>
 
 <nz-table [nzData]="users" [nzBordered]="true" [nzSize]="'middle'" >
   <thead>
     <tr>
       <th>Name</th>
+      <th>College</th>
+      <th>Branch</th>
       <th>Email</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
       <td>{{ user.name }}</td>
+      <td>{{ user.college }}</td>
+      <td>{{ user.branch }}</td>
       <td>{{ user.email }}</td>
     </tr>
   </tbody>
