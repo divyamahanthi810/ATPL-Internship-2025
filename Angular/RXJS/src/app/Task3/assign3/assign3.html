@@ -1,0 +1,16 @@
+<button nz-button nzType="default" (click)="reloadUsers()">Reload</button>
+
+<nz-table [nzData]="users" [nzBordered]="true" [nzSize]="'middle'" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </tbody>
+</nz-table>
