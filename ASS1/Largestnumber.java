@@ -11,18 +11,14 @@ class Main {
             arr[i]=sc.nextInt();
             
         }
-        int a=0;
-        int b=0;
-        for (int i:arr)
+        int max=arr[0];
+        for(int i=0;i<arr.length;i++)
         {
-            if(i%2==0)
+            if(max<arr[i])
             {
-                a++;
-            }
-            else{
-                b++;
+                max=arr[i];
             }
         }
-        System.out.println("Event count:"+a+",Odd Count:"+b);
+        System.out.println("The Largest element in the array is "+max);
     }
 }
