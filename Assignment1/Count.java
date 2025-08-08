@@ -24,5 +24,6 @@ class Count {
             }
         }
         System.out.println("Even count:"+a+",Odd Count:"+b);
+        sc.close();
     }
 }

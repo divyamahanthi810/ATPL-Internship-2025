@@ -20,5 +20,6 @@ class LargestNumber{
             }
         }
         System.out.println("The Largest element in the array is "+max);
+        sc.close();
     }
 }

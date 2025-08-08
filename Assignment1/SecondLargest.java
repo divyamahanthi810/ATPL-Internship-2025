@@ -30,5 +30,6 @@ public class SecondLargest {
         } else {
             System.out.println("Second largest element is: " + secondLargest);
         }
+        sc.close();
     }
 }

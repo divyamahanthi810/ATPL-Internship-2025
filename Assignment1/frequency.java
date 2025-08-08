@@ -29,6 +29,6 @@ public class Frequency {
             }
             System.out.println(arr[i] + " occurs " + count + " times");
         }
-
+        sc.close();
     }
 }

@@ -25,5 +25,6 @@ public class InsertElement {
             result[i + 1] = arr[i];
         }
         System.out.println("Array after insertion: " + Arrays.toString(result));
+        sc.close();
     }
 }
