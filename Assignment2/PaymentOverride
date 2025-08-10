@@ -1,0 +1,25 @@
+public class PaymentOverride{
+    public static void main(String args[]){
+        CreditCardPayment obj=new CreditCardPayment();
+        obj.processPayment();
+        CreditCardPayment obj1=new UPIPayment();
+        obj1.processPayment();
+        CreditCardPayment obj2=new OnlineShopping();
+        obj2.processPayment();
+    }
+}
+class CreditCardPayment{
+    public void processPayment(){
+        System.out.println("Payment Done through CreditCard");
+    }
+}
+class UPIPayment extends CreditCardPayment{
+    public void processPayment(){
+        System.out.println("Payment Done through UPIPayment");
+    }
+}
+class OnlineShopping extends CreditCardPayment{
+    public void processPayment(){
+        System.out.println("Payment Done through OnlineShopping");
+    }
+}

@@ -19,7 +19,7 @@ public class Person {
         Person1 p1=new Person1();
         p1.profession("manger");
         Person1 p2=new Student();
-        p2.profession("stident");
+        p2.profession("student");
         Person1 p3=new Teacher();
         p3.profession("Teacher");
 
