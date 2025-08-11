@@ -1,5 +1,4 @@
 package samepackage;
-
 public class AccessModifiersDemo {
     private String privateVar = "Private";
     String defaultVar = "Default";
