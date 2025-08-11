@@ -1,4 +1,3 @@
-import java.util.*;
 class MathUtils{
     public void calculate(int a,int b){
         System.out.println(a+b);
