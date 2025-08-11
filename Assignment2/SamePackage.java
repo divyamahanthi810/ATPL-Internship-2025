@@ -1,5 +1,4 @@
-package samepackage;
-
+package sample;
 public class SamePackage {
     public static void main(String[] args) {
         AccessModifiersDemo obj = new AccessModifiersDemo();
