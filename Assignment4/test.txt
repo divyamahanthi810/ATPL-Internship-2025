@@ -1,0 +1,1 @@
+Using Scanner in try-with-resource to read file.
