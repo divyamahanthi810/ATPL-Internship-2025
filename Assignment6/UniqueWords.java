@@ -10,7 +10,8 @@ public class UniqueWords {
             uniqueWords.add(word);
         }
         StringJoiner join = new StringJoiner(" "); 
-        for (String word : uniqueWords) {
+        for (String word : uniqueWords) 
+        {
             join.add(word);
         }
         System.out.println("Sentence after removing duplicates using hasset : " +join.toString());
