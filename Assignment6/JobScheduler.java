@@ -2,6 +2,7 @@
 import java.util.*;
 class JobScheduler {
     public static void main(String[] args) {
+        
         Queue<String> documents=new LinkedList<>();
         documents.add("Doc1");
         documents.add("Doc2");

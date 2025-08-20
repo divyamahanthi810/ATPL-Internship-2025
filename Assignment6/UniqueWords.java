@@ -1,9 +1,10 @@
 
 import java.util.*;
-import java.util.StringJoiner;
 public class UniqueWords {
     public static void main(String[] args) {
-        String sentence="Today is wednesday.This is the concert";
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Sentence");
+        String sentence=sc.nextLine();
         String[] words = sentence.split(" ");
         HashSet<String> uniqueWords = new HashSet<>();
         for (String word : words) {
