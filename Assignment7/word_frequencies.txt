@@ -1,0 +1,15 @@
+count : 1
+words : 1
+used : 1
+many : 1
+repeated : 1
+frequency : 1
+the : 1
+input : 1
+how : 1
+whichis : 1
+are : 1
+files : 1
+let : 1
+to : 1
+word : 1
