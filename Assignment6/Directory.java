@@ -11,7 +11,7 @@ public class Directory {
         System.out.println(hm);
         if(hm.containsKey("Divya"))
         {
-            hm.put("Divya","5");
+            hm.put("Divya","9542789054");
         }
         System.out.println(hm);
     }

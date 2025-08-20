@@ -36,6 +36,5 @@ class CustomerService {
         m.newCustomer();
         m.serve();
         m.serve();
-        
     }
 }

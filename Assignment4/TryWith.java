@@ -15,6 +15,4 @@ class TryWith {
       System.out.println("IOException in try block =>" + e.getMessage());
     }
   }
-}
-
-
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
