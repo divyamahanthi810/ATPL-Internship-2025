@@ -8,5 +8,5 @@ public class DuplicateRemover {
             uniqueWords.add(i);
         }
         System.out.println(uniqueWords);
-    }
+    } 
 }

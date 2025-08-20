@@ -19,6 +19,5 @@ public class SetMethods {
         System.out.println("Difference in Set B: "+setb);
         setb.addAll(seta);
         System.out.println("Union: "+setb);
-        
     }
 }
