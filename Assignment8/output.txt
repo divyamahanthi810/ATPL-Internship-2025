@@ -1,0 +1,4 @@
+ Name        Age         Deaprtment        GPA
+ John        21          CSE              9.01
+ Priya       22          ECE               8.5
+ Ram         21          EEE              7.93
