@@ -1,21 +1,27 @@
 import java.io.*;
+import java.text.MessageFormat;
 public class Deserialize {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EOFException {
+        String filename = "file.ser";
 
-        // Deserialization
-        try {
-            FileInputStream file = new FileInputStream("file.ser");
-            ObjectInputStream in = new ObjectInputStream(file);
-            List<String> deserializedList = (ArrayList<String>) in.readObject();
-            in.close();
-            file.close();
-            System.out.println("Object has been deserialized");
-            System.out.println(deserializedList);
+        try (FileInputStream file = new FileInputStream(filename);
+             ObjectInputStream in = new ObjectInputStream(file)) {
 
-        } catch (IOException ex) {
-            System.out.println("IOException is caught");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("ClassNotFoundException is caught");
+            System.out.println("Deserialized Data from file:"+filename);
+
+            while (true) {
+                try {
+                    String[] row = (String[]) in.readObject();
+                    String sentence=MessageFormat.format("Name: {0} Age: {1} Dept: {2} CGPA: {3}", (Object[]) row);
+                    System.out.println(sentence);
+                } catch (EOFException e) {
+                    break; 
+                }
+            }
+
+
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Exception is caught: " + e);
         }
     }
 }
