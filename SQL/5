@@ -5,3 +5,10 @@ create table departments(
 insert into departments values ("D1","Computer science");
 insert into departments values ("D2","Mathematics");
 insert into departments values ("D3","Physics");
+//course
+create table courses(
+  course_id varchar(20),
+  dept_name varchar(20)); 
+insert into departments values ("D1","Computer science");
+insert into departments values ("D2","Mathematics");
+insert into departments values ("D3","Physics");
