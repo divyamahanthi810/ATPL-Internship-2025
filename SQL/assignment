@@ -1,0 +1,106 @@
+create database Intern;
+use Intern;
+show databases;
+
+CREATE TABLE DepartmentDivya (
+  Dept_ID VARCHAR(10) primary key,
+  Dept_Name VARCHAR(20) NOT NULL
+);
+INSERT INTO DepartmentDivya(Dept_ID,Dept_Name) VALUES ('D1', 'Computer Science'),('D2', 'Mathematics'), ('D3', 'Physics');
+
+CREATE TABLE CourseDivya (
+  Course_ID VARCHAR(10) primary key,
+  Course_Name VARCHAR(20) not null,
+  Dept_id varchar(10), foreign key(Dept_ID) references DepartmentDivya(Dept_ID) 
+);
+INSERT INTO CourseDivya(Course_ID,Course_Name,Dept_id) VALUES ('C1', 'DBMS','D1'),('C2', 'Linear Algebra','D2'), ('C3', 'Quantum Mechanics','D3');
+
+
+CREATE TABLE StudentDivya (
+  Student_ID varchar(10) primary key,
+  Student_Name VARCHAR(20) not null,
+  age INT, DOB DATE,Dept_ID VARCHAR(10), foreign key(Dept_ID) references DepartmentDivya(Dept_ID)
+);
+INSERT INTO StudentDivya(Student_ID,Student_Name,age,DOB,Dept_ID) VALUES ('S1',"Ravi",22,'2002-06-10','D1'),('S2',"Sneha",23,'2001-03-15','D2'),('S3',"Arjun",21,'2003-01-20','D1');
+        
+
+CREATE TABLE ENROLLMENT (STUDENT_ID VARCHAR(10),COURSE_ID VARCHAR(10),
+						PRIMARY KEY(STUDENT_ID,COURSE_ID),
+                        foreign key(STUDENT_ID) references STUDENTDivya(STUDENT_ID),
+                         foreign key(COURSE_ID) references COURSEDivya(COURSE_ID));
+INSERT INTO ENROLLMENT (STUDENT_ID,COURSE_ID) VALUES ('S1','C1'),('S1','C2'),('S2','C1');
+SELECT * FROM ENROLLMENT;
+        
+        
+-- Add a new column to the courses table
+ALTER TABLE CourseDivya ADD Course_duration varchar(20);
+
+-- Update a students Table.
+UPDATE StudentDivya SET Student_Name="Sneha Reddy" WHERE Student_name='sneha';
+SELECT * FROM StudentDivya;
+
+-- Delete a course
+delete FROM CourseDivya where Course_id='C3';
+select * from CourseDivya;
+	
+-- Show all students older than 21
+SELECT * FROM StudentDivya WHERE age>21;
+
+-- Display name,DOB ordered by age(older first)
+SELECT Student_Name,DOB,AGE FROM StudentDivya ORDER BY AGE;
+    
+-- Show top 2 youngest students
+SELECT Student_Name,DOB,AGE FROM StudentDivya ORDER BY DOB DESC LIMIT 2;
+
+--  Show student count per department
+SELECT DEPT_ID,COUNT(*) AS TOTAL_STUDENTS FROM StudentDivya GROUP BY Dept_ID;
+
+-- find the average age of students per department
+SELECT (SELECT dept_Name FROM DepartmentDivya WHERE DepartmentDivya.dept_ID=StudentDivya.dept_ID) AS Dept_Name,
+    AVG(age) AS Avg_age
+FROM StudentDivya
+GROUP BY StudentDivya.dept_ID;
+
+SELECT DEPT_ID,AVG(AGE) FROM STUDENTDivya GROUP BY DEPT_ID;
+
+-- get max and min age in the entire table
+SELECT MAX(age) AS max_age,MIN(age) AS min_age FROM StudentDivya;
+
+
+CREATE TABLE Accounts_Divya 
+	(account_ID varchar(10) primary key , holder_name varchar(50) not null, balance float);
+INSERT INTO Accounts_Divya (account_ID,holder_name,balance) VALUES ('Account1','Alice',5000),('Account2','BOB',3000),('Account3','Charlie',4000);
+SELECT * FROM Accounts_Divya;
+
+-- Start a Transaction – Transfer ₹1000 from Alice to Bob
+START TRANSACTION;
+-- updated few column values 
+UPDATE Accounts_Divya SET balance=balance-1000 WHERE holder_name = 'Alice';
+UPDATE Accounts_Divya SET balance=balance+1000 WHERE holder_name = 'Bob';
+SELECT * FROM Accounts_Divya;
+-- Undoes all changes made in the current transaction that havent been commited.
+ROLLBACK;
+SELECT * FROM Accounts_Divya; 
+
+-- New Transaction with SAVEPOINT
+START TRANSACTION;
+UPDATE Accounts_Divya SET balance=balance-1000 WHERE holder_name = 'Alice';
+SAVEPOINT after_debit;
+UPDATE Accounts_Divya SET balance=balance+1000 WHERE holder_name = 'Bob';
+UPDATE Accounts_Divya SET balance=balance+500 WHERE holder_name = 'Charlie';
+ROLLBACK TO after_debit;
+
+COMMIT;
+
+--  Add course_code column and make it as UNIQUE.
+ALTER TABLE CourseDivya ADD course_code varchar(10) UNIQUE;
+UPDATE CourseDivya SET course_code='CS101' where COURSE_ID='C1';
+UPDATE CourseDivya SET course_code='MATH205' where COURSE_ID='C2';
+SELECT * FROM CourseDivya;
+
+-- Add a column credits to the courses table and enforce a CHECK constraint
+ALTER TABLE CourseDivya DROP COLUMN CREDITS;
+ALTER TABLE CourseDivya ADD COLUMN credits INT CHECK (credits BETWEEN 1 and 5);
+UPDATE CourseDivya SET Credits = 4 where course_id='C2';
+UPDATE CourseDivya SET Credits = 5 where course_id='C1';
+SELECT * FROM CourseDivya;
