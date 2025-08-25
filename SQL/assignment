@@ -84,3 +84,35 @@ ROLLBACK TO after_debit;
 COMMIT;
 
 select * from Accounts_Divya;
+
+--Inner join Student with department
+select Student_Name,Dept_Name from StudentDivya AS S inner join DepartmentDivya as d on S.Dept_ID=d.Dept_ID;
+
+--left join to get all departments
+select Student_Name,Dept_Name from DepartmentDivya AS S left join StudentDivya as d on S.Dept_ID=d.Dept_ID;
+ 
+--self Join employee and manager
+create table EmployeDivya(e_name varchar(10),e_id int,m_id int);
+insert into EmployeDivya(e_name,e_id,m_id) values ("Divya",101,103),("ravi",103,102),("murali",102,105);
+select a.e_name,a.e_id as Employee,b.e_name as M_name,b.m_id as Manager from EmployeDivya a,EmployeDivya b WHERE a.e_id=b.m_id; 
+
+--CTE Usage With
+WITH student_counts AS (
+  SELECT d.Dept_Name,count(*) as Students FROM DepartmentDivya d LEFT JOIN StudentDivya sc ON d.dept_id = sc.dept_id group by Dept_Name
+)
+select * from student_counts;
+
+--Data Integrity and Constrains
+alter table CourseDivya add course_code varchar(20);
+alter table CourseDivya add Unique(course_code);
+alter table CourseDivya add credits int check (5>=credits>=1);
+update CourseDivya set course_code="CS101" where Course_ID="c1";
+update CourseDivya set course_code="MATH205" where Course_ID="c2";
+update CourseDivya set credits=4 where Course_ID="c1";
+update CourseDivya set credits=3 where Course_ID="c2";
+select * from CourseDivya; 
+
+--Views
+create view views as select Student_Name,Dept_Name from StudentDivya inner join DepartmentDivya on StudentDivya.Dept_ID=DepartmentDivya.Dept_ID;
+select * from views;
+update views set Dept_Name="Physics" where Student_Name="Ravi";
