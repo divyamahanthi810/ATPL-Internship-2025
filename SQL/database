@@ -1,113 +1,11 @@
-show databases;
-use intern;
-
--- Customers Table
-CREATE TABLE CustomersDivya (customerID INT PRIMARY KEY,customerName VARCHAR(50),contactName VARCHAR(20),address VARCHAR(100),
-    city VARCHAR(20),postalCode VARCHAR(20),country VARCHAR(20)
-);
-
--- Insert into Customers
-INSERT INTO CustomersDivya VALUES
-(1, 'Alfreds Futterkiste', 'Maria Anders', 'Obere Str. 57', 'Berlin', '12209', 'Germany'),
-(2, 'Bs Beverages', 'Victoria Ashworth', 'Fauntleroy Circus', 'London', 'EC2 5NT','UK'),
-(3, 'Frankenversand', 'Peter Franken', 'Berliner Platz 43', 'München', '80805', 'Germany');
-
--- Categories Table
-CREATE TABLE CategoriesDivya (categoryID INT PRIMARY KEY,categoryName VARCHAR(30), description TEXT);
-
--- Insert into Categories
-INSERT INTO CategoriesDivya VALUES
-(1, 'Beverages', 'Soft drinks, coffees, teas, beers, and ales'),
-(2,	'Dairy-products', 'cheese');
-
--- Employees Table
-CREATE TABLE EmployeesDivya (empID INT PRIMARY KEY,lastName VARCHAR(25),firstName VARCHAR(25),birthDate DATE,photo VARCHAR(50),notes TEXT);
-
--- Insert into Employees
-INSERT INTO EmployeesDivya VALUES
-(1, 'Brown', 'Nancy', '1980-05-15', 'EmpID1.jpg', 'Nancy is a member of Toastmasters International'),
-(2, 'Davis', 'Anne', '1975-03-20', 'EmpID2.jpg', 'Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German');
-
--- Shippers Table
-CREATE TABLE ShippersDivya (shipperID INT PRIMARY KEY,shipperName VARCHAR(50),phone VARCHAR(20)); 
-
--- Insert into Shippers
-INSERT INTO ShippersDivya VALUES
-(1, 'FastShip', '123-456-7890'),
-(2, 'QuickMove', '987-654-3210');
-
--- Orders Table
-CREATE TABLE OrdersDivya (orderID INT PRIMARY KEY,customerID INT,employeeID INT,orderDate DATE,shipperID INT,
-    FOREIGN KEY (customerID) REFERENCES CustomersDivya(customerID),
-    FOREIGN KEY (employeeID) REFERENCES EmployeesDivya(empID),
-    FOREIGN KEY (shipperID) REFERENCES ShippersDivya(shipperID)
-);
-
--- Insert into Orders
-INSERT INTO OrdersDivya VALUES
-(1, 1, 1, '2023-01-15', 1),
-(2, 2, 2, '2023-02-10', 2),
-(3, 3, 1, '2023-02-20', 1),
-(4, 1, 2, '2023-03-05', 2),
-(5, 2, 1, '2023-03-15', 1);
-
--- Suppliers Table
-CREATE TABLE SupplierDivya (supplierID INT PRIMARY KEY,supplierName VARCHAR(50),contactName VARCHAR(50),address VARCHAR(200),
-	city VARCHAR(50),postalCode VARCHAR(20),country VARCHAR(50)
-);
-
--- Insert into Supplier
-INSERT INTO SupplierDivya VALUES
-(1, 'Supplier One', 'John Doe', '321 Peach St', 'Miami', '33101', 'USA'),
-(2, 'Supplier Two', 'Jane Roe', '654 Plum Rd', 'Vancouver', 'V5K0A1', 'Canada');   
-
--- Products Table
-CREATE TABLE ProductsDivya (productID INT PRIMARY KEY,productName VARCHAR(100),supplierID INT,categoryID INT,unit VARCHAR(50),price DECIMAL(10,2),
-    FOREIGN KEY (supplierID) REFERENCES SupplierDivya(supplierID),
-    FOREIGN KEY (categoryID) REFERENCES CategoriesDivya(categoryID)
-);
-
--- Insert into Products
-INSERT INTO ProductsDivya VALUES
-(1, 'Cola', 1, 1, '12-pack', 5.99),
-(2, 'Orange Juice', 1, 1, '1L bottle', 3.49),
-(3, 'cheese', 2, 2, '200g bag', 2.99);
-
--- OrderDetails Table
-CREATE TABLE OrderDetailsDivya (orderDetailID INT PRIMARY KEY,orderID INT,productID INT,quantity INT,
-    FOREIGN KEY (orderID) REFERENCES OrdersDivya(orderID),
-    FOREIGN KEY (productID) REFERENCES ProductsDivya(productID)
-);
-
--- Insert into OrderDetails
-INSERT INTO OrderDetailsDivya VALUES
-(1, 1, 1, 10),
-(2, 1, 2, 5),
-(3, 2, 3, 8),
-(4, 3, 1, 12),
-(5, 4, 2, 3),
-(6, 5, 3, 6);
-
-
-Select * from CustomersDivya;
-Select * from categoriesDivya;
-select * from employeesDivya;
-select * from shippersDivya;
-select * from supplierDivya;
-select * from productsDivya;
-select * from ordersDivya;
-select * from orderdetailsDivya;
-
 -- 1.What is the total number of orders?
-select count(orderid) As Total_num_of_orders from OrdersDivya;
+SELECT count(OrderID) FROM Orders;
 
 -- 2.How many customers are there?
-select count(customerid) as total_customers from customersDivya;
+SELECT count(CustomerID) FROM Customers;
 
 -- 3. What is the total revenue from all orders?
-select p.productname, Sum(od.quantity * p.price) as total_revenue from orderdetailsDivya od
-join productsDivya p on od.productid=p.productid
-group by productname;
+SELECT sum(Price) from Products;
 
 -- 4.What are the top 5 best-selling products by quantity?
 select p.productname,sum(od.quantity) as quantity from  orderdetailsDivya od 
@@ -122,10 +20,7 @@ group by productname
 order by total_revenue desc limit 5;
 
 -- What is the average revenue overall products?
-select avg(avg_revenue) as avg_revenue_product from
-	(select p.productname , sum(od.quantity*p.price) as avg_revenue from productsDivya p
-    join orderdetailsDivya od on p.productid=od.productid 
-    group by productname) as product_revenue;
+SELECT ProductId,avg(price) FROM Products group by ProductId;
     
 -- 6.what is the average revenue per product?
 SELECT p.productname,

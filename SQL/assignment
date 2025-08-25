@@ -22,21 +22,12 @@ CREATE TABLE StudentDivya (
   age INT, DOB DATE,Dept_ID VARCHAR(10), foreign key(Dept_ID) references DepartmentDivya(Dept_ID)
 );
 INSERT INTO StudentDivya(Student_ID,Student_Name,age,DOB,Dept_ID) VALUES ('S1',"Ravi",22,'2002-06-10','D1'),('S2',"Sneha",23,'2001-03-15','D2'),('S3',"Arjun",21,'2003-01-20','D1');
-        
-
-CREATE TABLE ENROLLMENT (STUDENT_ID VARCHAR(10),COURSE_ID VARCHAR(10),
-						PRIMARY KEY(STUDENT_ID,COURSE_ID),
-                        foreign key(STUDENT_ID) references STUDENTDivya(STUDENT_ID),
-                         foreign key(COURSE_ID) references COURSEDivya(COURSE_ID));
-INSERT INTO ENROLLMENT (STUDENT_ID,COURSE_ID) VALUES ('S1','C1'),('S1','C2'),('S2','C1');
-SELECT * FROM ENROLLMENT;
-        
-        
+          
 -- Add a new column to the courses table
 ALTER TABLE CourseDivya ADD Course_duration varchar(20);
 
 -- Update a students Table.
-UPDATE StudentDivya SET Student_Name="Sneha Reddy" WHERE Student_name='sneha';
+UPDATE StudentDivya SET Student_Name="Sneha Reddy" WHERE Student_ID='S2';
 SELECT * FROM StudentDivya;
 
 -- Delete a course
@@ -75,8 +66,8 @@ SELECT * FROM Accounts_Divya;
 -- Start a Transaction – Transfer ₹1000 from Alice to Bob
 START TRANSACTION;
 -- updated few column values 
-UPDATE Accounts_Divya SET balance=balance-1000 WHERE holder_name = 'Alice';
-UPDATE Accounts_Divya SET balance=balance+1000 WHERE holder_name = 'Bob';
+UPDATE Accounts_Divya SET balance=balance-1000 WHERE account_ID="Account1";
+UPDATE Accounts_Divya SET balance=balance+1000 WHERE account_ID="Account2";
 SELECT * FROM Accounts_Divya;
 -- Undoes all changes made in the current transaction that havent been commited.
 ROLLBACK;
@@ -84,23 +75,12 @@ SELECT * FROM Accounts_Divya;
 
 -- New Transaction with SAVEPOINT
 START TRANSACTION;
-UPDATE Accounts_Divya SET balance=balance-1000 WHERE holder_name = 'Alice';
+UPDATE Accounts_Divya SET balance=balance-1000 WHERE account_ID="Account1";
 SAVEPOINT after_debit;
-UPDATE Accounts_Divya SET balance=balance+1000 WHERE holder_name = 'Bob';
-UPDATE Accounts_Divya SET balance=balance+500 WHERE holder_name = 'Charlie';
+UPDATE Accounts_Divya SET balance=balance+1000 WHERE account_ID="Account2";
+UPDATE Accounts_Divya SET balance=balance+500 WHERE account_ID="Account3";
 ROLLBACK TO after_debit;
 
 COMMIT;
 
---  Add course_code column and make it as UNIQUE.
-ALTER TABLE CourseDivya ADD course_code varchar(10) UNIQUE;
-UPDATE CourseDivya SET course_code='CS101' where COURSE_ID='C1';
-UPDATE CourseDivya SET course_code='MATH205' where COURSE_ID='C2';
-SELECT * FROM CourseDivya;
-
--- Add a column credits to the courses table and enforce a CHECK constraint
-ALTER TABLE CourseDivya DROP COLUMN CREDITS;
-ALTER TABLE CourseDivya ADD COLUMN credits INT CHECK (credits BETWEEN 1 and 5);
-UPDATE CourseDivya SET Credits = 4 where course_id='C2';
-UPDATE CourseDivya SET Credits = 5 where course_id='C1';
-SELECT * FROM CourseDivya;
+select * from Accounts_Divya;
